@@ -1,0 +1,36 @@
+{
+  "name": "plugin-build-flowgen",
+  "version": "0.0.0",
+  "description": "A @pika/pack build plugin. Adds Flow type definitions generated from TypeScript definitions.",
+  "main": "pkg/dist-node/index.js",
+  "author": "Peter Sieg <chasingmaxwell@gmail.com>",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "pika-pack build"
+  },
+  "@pika/pack": {
+    "pipeline": [
+      [
+        "@pika/plugin-standard-pkg"
+      ],
+      [
+        "@pika/plugin-build-node"
+      ]
+    ]
+  },
+  "dependencies": {
+    "fast-glob": "^2.2.6",
+    "flowgen": "^1.8.0"
+  },
+  "devDependencies": {
+    "@pika/pack": "^0.3.7",
+    "@pika/plugin-build-node": "^0.3.14",
+    "@pika/plugin-standard-pkg": "^0.3.14",
+    "@pika/types": "^0.3.15",
+    "@types/node": "^11.13.4",
+    "typescript": "^3.4.3"
+  }
+}
